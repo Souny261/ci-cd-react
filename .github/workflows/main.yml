@@ -23,7 +23,6 @@ jobs:
 
       - name: Dependecies
         run: |
-          npm i esbuild-android-arm64 --save-optional
           npm ci
 
       - name: Build
