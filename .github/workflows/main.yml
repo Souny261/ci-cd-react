@@ -22,7 +22,9 @@ jobs:
           git config user.email "<>"
 
       - name: Dependecies
-        run: npm ci
+        run: |
+          npm i esbuild-android-arm64 --save-optional
+          npm ci
 
       - name: Build
         run: npm run build
