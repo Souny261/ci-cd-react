@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   dev:
-    image: souny007/cd-ci-react:0.0.4
+    image: souny007/cd-ci-react:0.0.5
     restart: always
     ports:
       - 8080:80

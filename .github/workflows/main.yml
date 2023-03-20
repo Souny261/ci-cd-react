@@ -41,7 +41,32 @@ jobs:
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
       - name: Build Docker image
-        run: docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/cd-ci-react:${{steps.version.outputs.tag}}
+        # run: docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/cd-ci-react:${{steps.version.outputs.tag}}
+        run: docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/cd-ci-react:latest
 
       - name: Push to Docker Hub
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/cd-ci-react:${{steps.version.outputs.tag}}
+        # run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/cd-ci-react:${{steps.version.outputs.tag}}
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/cd-ci-react:latest
+
+      # - name: Call Portainer Webhook to Update Service
+      #   id: callportainerwebhook
+      #   if: steps.build.outcome == 'success'
+      #   continue-on-error: true
+      #   run: |
+
+      #     CODE=`curl --write-out '%{http_code}' \
+      #         --silent \
+      #         --output /dev/null \
+      #         --request POST \
+      #         --url 'http://localhost:9000/api/webhooks/08aa3890-8cbf-4e4a-8aad-dd50a9b05bc3'`
+
+      #     if [ $CODE != "204" ]
+      #     then
+      #         echo $CODE
+      #         echo "FAILURE"
+      #         exit 1
+      #     else
+      #         echo $CODE
+      #         echo "SUCCESS"
+      #         exit 0
+      #     fi
