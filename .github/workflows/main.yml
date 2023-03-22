@@ -53,14 +53,14 @@ jobs:
         if: steps.build.outcome == 'success'
         continue-on-error: true
         run: |
-        
+
           CODE=`curl --write-out '%{http_code}' \
               --silent \
               --output /dev/null \
               --request POST \
-              --url 'http://202.137.135.8:9000/api/stacks/webhooks/38d5c251-f80d-44da-8092-36a1ddf1de0b'`
+              --url 'http://env-2295026.la1.ltccloud.la:9000/api/stacks/webhooks/38d5c251-f80d-44da-8092-36a1ddf1de0b'`
 
-          if [ $CODE != "204" ]
+          if [ $CODE != "204" ] 
           then
               echo $CODE
               echo "FAILURE"
