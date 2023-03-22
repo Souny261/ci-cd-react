@@ -58,7 +58,7 @@ jobs:
               --silent \
               --output /dev/null \
               --request POST \
-              --url 'http://202.137.135.8:9000/api/webhooks/2222af74-f57e-46c7-ad8b-0478dc379993'`
+              --url 'http://202.137.135.8:9000/api/stacks/webhooks/38d5c251-f80d-44da-8092-36a1ddf1de0b'`
 
           if [ $CODE != "204" ]
           then
