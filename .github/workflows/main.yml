@@ -48,25 +48,25 @@ jobs:
         # run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/cd-ci-react:${{steps.version.outputs.tag}}
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/cd-ci-react:latest
 
-      # - name: Call Portainer Webhook to Update Service
-      #   id: callportainerwebhook
-      #   if: steps.build.outcome == 'success'
-      #   continue-on-error: true
-      #   run: |
+      - name: Call Portainer Webhook to Update Service
+        id: callportainerwebhook
+        if: steps.build.outcome == 'success'
+        continue-on-error: true
+        run: |
 
-      #     CODE=`curl --write-out '%{http_code}' \
-      #         --silent \
-      #         --output /dev/null \
-      #         --request POST \
-      #         --url 'http://localhost:9000/api/webhooks/08aa3890-8cbf-4e4a-8aad-dd50a9b05bc3'`
+          CODE=`curl --write-out '%{http_code}' \
+              --silent \
+              --output /dev/null \
+              --request POST \
+              --url 'http://202.137.135.8:9000/api/webhooks/2222af74-f57e-46c7-ad8b-0478dc379993'`
 
-      #     if [ $CODE != "204" ]
-      #     then
-      #         echo $CODE
-      #         echo "FAILURE"
-      #         exit 1
-      #     else
-      #         echo $CODE
-      #         echo "SUCCESS"
-      #         exit 0
-      #     fi
+          if [ $CODE != "204" ]
+          then
+              echo $CODE
+              echo "FAILURE"
+              exit 1
+          else
+              echo $CODE
+              echo "SUCCESS"
+              exit 0
+          fi
