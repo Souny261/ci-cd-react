@@ -3,5 +3,7 @@ services:
   dev:
     image: souny007/cd-ci-react:latest
     restart: always
+    environment:
+      VITE_REACT_APP_VERSION: "1.0.3"
     ports:
       - 8080:80
