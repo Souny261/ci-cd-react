@@ -70,7 +70,7 @@ jobs:
               --silent \
               --output /dev/null \
               --request POST \
-              --url 'http://env-2295026.la1.ltccloud.la:9000/api/stacks/webhooks/38d5c251-f80d-44da-8092-36a1ddf1de0b'`
+              --url 'https://192.46.227.83:9443/api/stacks/webhooks/4a0b0933-0e4a-4e52-b8d4-5ea8fbd6edc1'`
 
           if [ $CODE != "204" ] 
           then
