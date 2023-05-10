@@ -69,7 +69,7 @@ jobs:
               --silent \
               --output /dev/null \
               --request POST \
-              --url 'https://192.168.100.187:9443/api/stacks/webhooks/a3299f38-8650-49e5-954f-b374d80209ab'`
+              --url 'https://202.137.144.103:9443/api/stacks/webhooks/a3299f38-8650-49e5-954f-b374d80209ab'`
 
           if [ $CODE != "204" ] 
           then
