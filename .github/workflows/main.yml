@@ -65,12 +65,11 @@ jobs:
         if: steps.build.outcome == 'success'
         continue-on-error: true
         run: |
-
           CODE=`curl --write-out '%{http_code}' \
               --silent \
               --output /dev/null \
               --request POST \
-              --url 'https://192.46.227.83:9443/api/stacks/webhooks/4a0b0933-0e4a-4e52-b8d4-5ea8fbd6edc1'`
+              --url 'https://192.168.100.187:9443/api/stacks/webhooks/a3299f38-8650-49e5-954f-b374d80209ab'`
 
           if [ $CODE != "204" ] 
           then

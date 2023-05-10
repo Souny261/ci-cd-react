@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import reactLogo from "./assets/react.svg";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
   // ++++ เพิ่มฟังก์ชัน useEffect
   useEffect(() => {
-  console.log("useEffect");
-  setCount(100)
+    console.log("useEffect");
+    setCount(100);
   }, []);
   return (
     <div className="App">
@@ -19,7 +19,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Automate Deployment Version 2023</h1>
+      <h1>Automate Deployment Version 2023-DEMO</h1>
       <h1>Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
@@ -33,7 +33,7 @@ function App() {
         Click on the Vite and React logos to learn more TEST
       </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
